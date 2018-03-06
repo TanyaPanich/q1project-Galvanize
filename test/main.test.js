@@ -2,18 +2,16 @@ const chai = require('chai')
 const expect = chai.expect
 const main = require('../js/main')
 
-describe('calculator', function () {
-  it('is an object', function () {
-    expect(main.calculator).to.be.a('object')
+describe('renderHeroes', function () {
+  it('is a function', function () {
+    expect(renderHeroes).to.be.a('function')
   })
 
-  describe('#multiply', function () {
-    it('should be a function', function () {
-      expect(main.calculator.multiply).to.be.a('function')
-    })
-
-    it('should multiply two numbers together', function () {
-      expect(main.calculator.multiply(5,2)).to.equal(10)
-    })
+  it('for every el in array shoud crete a card', function () {
+    const arr = [1, 2, 3]
+    //const expected = ??
+    //const result = ??
+    //expect(result).to.deep.eq(expected)
   })
+
 })
