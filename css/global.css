@@ -1,6 +1,23 @@
 html {
-    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+    font-family: Lora, Trebuchet, sans-serif;
   }
-#taskContainer{
+#firstRow {
+  border: 1px black solid;
+  display: flex;
+}
+#favHeroImage {
+
+}
+#heroTaskContainer {
+
+}
+
+#secondStepWhichHero,
+#thirdStepChooseTasks,
+#fourthStepDoTasks,
+#fifthStepReward {
   display: none;
+}
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-text)
 }
