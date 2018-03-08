@@ -14,7 +14,8 @@ html {
 
 #secondStepWhichHero,
 #thirdStepChooseTasks,
-#fourthStepDoTasks {
+#fourthStepDoTasks,
+#fifthStepGetReward {
   display: none;
 }
 #back {

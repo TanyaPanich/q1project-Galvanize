@@ -1,9 +1,11 @@
 
 var previousState = null
+
 function goBack() {
   $('#secondStepWhichHero').css('display','none')
   $('#thirdStepChooseTasks').css('display','none')
   $('#fourthStepDoTasks').css('display','none')
+  $('#fifthStepGetReward').css('display','none')
   if (previousState === "first") {
     location.reload()
     previousState = null
@@ -16,8 +18,12 @@ function goBack() {
   }  else  if (previousState === "fourth") {
     $('#fourthStepDoTasks').css('display','block')
     previousState = 'third'
+  } else  if (previousState === "fifth") {
+    $('#fifthStepGetReward').css('display','block')
+    previousState = 'fourth'
   }
 }
+
 function backgroundDark(event){
   event.preventDefault()
   $('body').css('background-color','#01579b')
@@ -25,6 +31,7 @@ function backgroundDark(event){
   $('#secondStepWhichHero').css('display','block')
   $('#back').css('display','block')
 }
+
 function backgroundLight(event){
   event.preventDefault()
   $('body').css('background-color','#ffd54f')
@@ -32,19 +39,14 @@ function backgroundLight(event){
   $('#secondStepWhichHero').css('display','block')
   $('#back').css('display','block')
 }
+
 function renderHeroesCards(heroesArr) {
   for(let hero of heroesArr) {
     const $cols10m3 = $('<div>').addClass('col s10 m3')
-    const $card = $('<div>').addClass('card')
+    const $card = heroCardAttributes(hero)
     $card.on('click', thirdRenderFavoriteHero)
-    $card.attr('data-hero-name', hero.name)
-    $card.attr('data-hero-image-url', hero.imageSrc)
-    $card.attr('data-hero-description', hero.description)
     const $cardImage = $('<div>').addClass('card-image')
-    const $img = $('<img>')
-    $img.attr({
-      src: hero.imageSrc
-    })
+    const $img = heroImageString(hero)
     const $span = $('<span>').addClass('card-title')
     $span.text(hero.name)
     $cardImage.append($img, $span)
@@ -53,6 +55,19 @@ function renderHeroesCards(heroesArr) {
     $('#listings').append($cols10m3)
   }
 }
+
+function heroCardAttributes(hero){
+  let card = $('<div>').addClass('card')
+  card.attr('data-hero-name', hero.name)
+  card.attr('data-hero-image-url', hero.imageSrc)
+  return card;
+}
+
+function heroImageString(hero){
+  let img
+  return img = '<img src=' + hero.imageSrc + ' alt=' + hero.name +'>'
+}
+
 function secondGetHeroesAndRender() {
   console.log("secondGetHeroesAndRender");
   previousState = "first"
@@ -82,7 +97,7 @@ function secondGetHeroesAndRender() {
         let hero = {}
         hero.name = heroRes.name
         hero.imageSrc = heroRes.thumbnail.path + "/portrait_fantastic." + heroRes.thumbnail.extension
-        hero.description = heroRes.description
+        //hero.description = heroRes.description
         allHeroes.push(hero)
         if(allHeroes.length === heroesURL.length){
           localStorage.setItem('heroes', JSON.stringify(allHeroes))
@@ -99,6 +114,7 @@ function thirdRenderFavoriteHero(event) {
   event.preventDefault()
   const $heroName = $(this).attr('data-hero-name')
   const $heroImageUrl = $(this).attr('data-hero-image-url')
+  $('#fifthStepGetReward').css('display','none')
   $('#fourthStepDoTasks').css('display','none')
   $('#secondStepWhichHero').css('display','none')
   $('#thirdStepChooseTasks').css('display','block')
@@ -113,6 +129,7 @@ function fourthRenderBigTasks(event) {
   console.log("fourthRenderBigTasks");
   previousState = 'third'
   event.preventDefault()
+
   $('#thirdStepChooseTasks').css('display','none')
   $('#fourthStepDoTasks').css('display','block')
   const tasksURL = {teeth: 'images/heroTask/teethbatman.jpg',
@@ -130,6 +147,7 @@ function fourthRenderBigTasks(event) {
                 }
   const choosenTasksArray = $('#heroTaskContainer').children('.btn-large')
   $('#fourthStepDoTasks').empty()
+  let count = 0
   for(let choosenTask of choosenTasksArray) {
     const $bigTaskImage = $('<img>')
     if (choosenTask.name in tasksURL) {
@@ -137,10 +155,17 @@ function fourthRenderBigTasks(event) {
       $('#fourthStepDoTasks').append($bigTaskImage)
       $bigTaskImage.on('click', function() {
         $(this).effect( "explode", {}, 500 );
+        count++;
+        if(count === choosenTasksArray.length){
+          $('#fourthStepDoTasks').css('display','none')
+          $('#fifthStepGetReward').css('display','block')
+        }
       })
+
     }
   }
 }
+
 document.addEventListener('DOMContentLoaded', function () {
   $('#morning').on('click', backgroundLight)
   $('#evening').on('click', backgroundDark)
@@ -153,8 +178,3 @@ document.addEventListener('DOMContentLoaded', function () {
       return false;
     });
 })
-
-
-// module.exports = {
-//   renderHeroes: renderHeroes
-// }
