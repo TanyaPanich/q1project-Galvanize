@@ -17,7 +17,18 @@
 </head>
 
 <body>
-  <div id="staticHeader"></div><!--end of staticHeader container-->
+  <div class='container' id="staticHeader">
+    <nav>
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left">
+          <li id="back"><img src="images/navIcons/back.svg" width="50px"></li>
+        </ul>
+        <a href="#" class="brand-logo center">Little Hero's Helper</a>
+      </div>
+    </nav>
+  </div>
+  <!--end of staticHeader container-->
+
   <div id="firstStepMorningNight">
     <div class="container">
       <div class="row">
@@ -58,46 +69,52 @@
         <div class="amber lighten-2 white-text">
         <div class="light-blue darken-4 white-text">
         -->
-  </div><!--end of firstStep container-->
+  </div>
+  <!--end of firstStep container-->
   <div id="secondStepWhichHero">
     <div class="container" id="heroContainer">
       <h1 class="flow-text center-align steps">Step2: Choose your hero!</h1>
       <div id="listings" class="row">
-      <!--Here will be rendered a hero cards -->
+        <!--Here will be rendered a hero cards -->
       </div>
     </div>
     <!--end of container-->
   </div>
   <!--end of secondStep container-->
   <div id="thirdStepChooseTasks">
-    <h1 class="flow-text center-align steps">Step3: Choose your goals!</h1>
+    <h1 class="flow-text center-align steps">Step3: Choose your tasks!</h1>
     <div class="row container z-depth-4" id="firstRow">
       <div class="col s4" id="favHeroImage">
       </div>
       <div class="col s8" id="heroTaskContainer">
-        <div id="dragText" contentEditable=true data-text="Drag some tasks here"></div>
-
+        <div id="dragText" contentEditable=true data-text="Drag some tasks here">
+        </div>
       </div>
-      <a class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/navIcons/play-button.svg" width='50px' class="right">Start!!!</a>
-    </div> <!--end of first row-->
+      <a id="start" class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/navIcons/play-button.svg" width='50px' class="right">Start!!!</a>
+    </div>
+    <!--end of first row-->
     <div class="row container" id="taskContainer">
-      <a class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/taskIcons/toothpaste.svg" width='50px' class="right">Brush teeth</a>
-      <a class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/taskIcons/bath.svg" width='50px' class="right">Take bath</a>
-      <a class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/taskIcons/book.svg" width='50px' class="right">Reed book</a>
-      <a class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/taskIcons/tools.png" width='50px' class="right">Brush hair</a>
-      <a class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/taskIcons/fashion.svg" width='50px' class="right">Pajama</a>
-      <a class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/taskIcons/food.svg" width='50px' class="right">Eat breakfast</a>
-      <a class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/taskIcons/people.svg" width='50px' class="right">Do exercises</a>
-      <a class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/taskIcons/toys.svg" width='50px' class="right">Organize toys</a>
-      <a class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/taskIcons/travel.svg" width='50px' class="right">Pack back</a>
-      <a class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/taskIcons/male.svg" width='50px' class="right">Put clothes on</a>
-      <a class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/taskIcons/tool.svg" width='50px' class="right">Collect garbage</a>
-    </div><!--end of taskContainer div-->
-  </div><!--end of thirdStep container-->
+      <a class="waves-effect waves-light btn-large hoverable z-depth-4" name="teeth"><img src="images/taskIcons/toothpaste.svg" width='50px' class="right">Brush teeth</a>
+      <a class="waves-effect waves-light btn-large hoverable z-depth-4" name="shower"><img src="images/taskIcons/bath.svg" width='50px' class="right">Take shower</a>
+      <a class="waves-effect waves-light btn-large hoverable z-depth-4" name="book"><img src="images/taskIcons/book.svg" width='50px' class="right">Read a book</a>
+      <a class="waves-effect waves-light btn-large hoverable z-depth-4" name="hair"><img src="images/taskIcons/comb.svg" width='50px' class="right">Brush hair</a>
+      <a class="waves-effect waves-light btn-large hoverable z-depth-4" name="pajama"><img src="images/taskIcons/fashion.svg" width='50px' class="right">Put pajamas on</a>
+      <a class="waves-effect waves-light btn-large hoverable z-depth-4" name="breakfast"><img src="images/taskIcons/food.svg" width='50px' class="right">Eat breakfast</a>
+      <a class="waves-effect waves-light btn-large hoverable z-depth-4" name="exercises"><img src="images/taskIcons/people.svg" width='50px' class="right">Exercise</a>
+      <a class="waves-effect waves-light btn-large hoverable z-depth-4" name="toys"><img src="images/taskIcons/toys.svg" width='50px' class="right">Organize toys</a>
+      <a class="waves-effect waves-light btn-large hoverable z-depth-4" name="backpack"><img src="images/taskIcons/travel.svg" width='50px' class="right">Pack bag</a>
+      <a class="waves-effect waves-light btn-large hoverable z-depth-4" name="clothes"><img src="images/taskIcons/male.svg" width='50px' class="right">Put clothes on</a>
+      <a class="waves-effect waves-light btn-large hoverable z-depth-4" name="laundry"><img src="images/taskIcons/laundry.svg" width='50px' class="right">Do laundry</a>
+    </div>
+    <!--end of taskContainer div-->
+  </div>
+  <!--end of thirdStep container-->
   <div id="fourthStepDoTasks">
     <h1 class="flow-text center-align steps">Step4: Let's do it!</h1>
+    <!-- <img src="images/heroTask/teethbatman.jpg"> -->
 
-  </div><!--end of fourthStep container-->
+  </div>
+  <!--end of fourthStep container-->
   <div id="fifthStepReward">
     <div class='container'>
       <h1 class="flow-text center-align steps">Step5: Great job! You earned a reward!</h1>
@@ -105,12 +122,11 @@
         src="https://www.youtube.com/embed/qMnQ5IT12Og?rel=0"
         frameborder="0" allow="autoplay; encrypted-media"
         allowfullscreen>
-        </iframe>
-
-
+      </iframe>
     </div>
 
-  </div><!--end of fifthStep container-->
+  </div>
+  <!--end of fifthStep container-->
 
 
 
@@ -118,7 +134,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script defer src="src/md5.js"></script>
   <script defer src="src/main.js"></script>
-
+  <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 
 </html>

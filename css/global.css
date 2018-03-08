@@ -14,9 +14,11 @@ html {
 
 #secondStepWhichHero,
 #thirdStepChooseTasks,
-#fourthStepDoTasks,
-#fifthStepReward {
+#fourthStepDoTasks {
   display: none;
+}
+#back {
+  display:none;
 }
 [contentEditable=true]:empty:not(:focus):before{
     content:attr(data-text)
