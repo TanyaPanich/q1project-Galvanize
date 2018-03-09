@@ -1,56 +1,88 @@
 html {
-    font-family: Lora, Trebuchet, sans-serif;
+  font-family: Lora, Trebuchet, sans-serif;
 }
 
-a.brand-logo {
-  color: #0a0f47;
+.nav-wrapper {
+  background-color: #007EA7;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+
+h1.brand-logo {
+  color: #FFFFFF;
+  margin: 0;
 }
 
 .btn-large {
-  background-color: #ed217c;
-  width: 200px;
+  background-color: #A6A6A8;
+  width: 80px;
   margin: 10px;
   padding: 5px;
 }
 
 #start {
-  background-color: #1b998b;
+  background-color: #003459;
 }
 
-#firstRow {
+div.firstRow {
   display: flex;
+  flex-direction: column;
 }
 
-#favHeroImage {
+div.favHeroImage {
+  flex: 1;
   margin: auto;
-  margin-left: 10px;
 }
 
-#startButton{
+div.heroTaskContainer {
+  min-height: 200px;
+  flex: 1;
+}
+
+div.startButton {
+  flex: 1;
   margin: auto;
-  margin-right: 10px;
 }
 
-#secondStepWhichHero,
-#thirdStepChooseTasks,
-#fourthStepDoTasks,
-#fifthStepGetReward {
+#taskContainer {
+  text-align: center;
+}
+
+#secondStepWhichHero, #thirdStepChooseTasks, #fourthStepDoTasks, #fifthStepGetReward {
   display: none;
 }
 
 #back {
-  display:none;
+  display: none;
 }
 
-.nav-wrapper{
-  background-color: #ff9b71;
-}
-
-.containerTasks {
-  display: flex;
-  justify-content: space-between;
+h1.steps {
+  padding: 20px;
 }
 
 .bigTaskImages {
   flex-basis: 30%;
+}
+@media (min-width: 600px) {
+  #start {
+    margin-left:95;
+  }
+}
+@media (min-width: 800px) {
+  .btn-large {
+    width: 150px;
+  }
+  div.firstRow {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn-large {
+    width: 200px;
+  }
+  div.firstRow {
+    flex-direction: row;
+  }
 }

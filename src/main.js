@@ -26,9 +26,9 @@ function goBack() {
 
 function backgroundDark(event){
   event.preventDefault()
-  $('body').css('background-color','#0a0f47')
+  $('body').css('background-color','#003459')
   $('.steps').css('color','white')
-  $('#heroTaskContainer').css('background-color', '#1b998b')
+  $('.firstRow').css('background-color', '#ffffff')
   $('#firstStepMorningNight').css('display','none')
   $('#secondStepWhichHero').css('display','block')
   $('#back').css('display','block')
@@ -36,9 +36,9 @@ function backgroundDark(event){
 
 function backgroundLight(event){
   event.preventDefault()
-  $('body').css('background-color','#fffd82')
+  $('body').css('background-color','#7798AB')
   $('.steps').css('color','#0a0f47')
-  $('#heroTaskContainer').css('background-color', '#ff9b71')
+  $('.firstRow').css('background-color', '#ffffff')
   $('#firstStepMorningNight').css('display','none')
   $('#secondStepWhichHero').css('display','block')
   $('#back').css('display','block')
@@ -131,8 +131,8 @@ function thirdRenderFavoriteHero(event) {
   const $heroImage = $('<img>')
   $heroImage.attr('src', $heroImageUrl)
   $heroImage.attr('id', 'heroImage')
-  $('#favHeroImage').empty()
-  $('#favHeroImage').append($heroImage)
+  $('.favHeroImage').empty()
+  $('.favHeroImage').append($heroImage)
 }
 
 function fourthRenderBigTasks(event) {
@@ -155,7 +155,7 @@ function fourthRenderBigTasks(event) {
                  toys: 'images/heroTask/toys.jpg',
                  hands: 'images/heroTask/hands.jpg'
                 }
-  const choosenTasksArray = $('#heroTaskContainer').children('.btn-large')
+  const choosenTasksArray = $('.heroTaskContainer').children('.btn-large')
   $('.bigTaskImages').empty()
   let count = 0
   for(let choosenTask of choosenTasksArray) {
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
   $('#morning').on('click', backgroundLight)
   $('#evening').on('click', backgroundDark)
   secondGetHeroesAndRender()
-  dragula([document.querySelector('#heroTaskContainer'), document.querySelector('#taskContainer')])
+  dragula([document.querySelector('.heroTaskContainer'), document.querySelector('#taskContainer')])
   $('#start').on('click', fourthRenderBigTasks)
   $('#back').on('click', goBack)
   $( "#button" ).on( "click", function() {
