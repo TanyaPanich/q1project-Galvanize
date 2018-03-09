@@ -28,7 +28,7 @@ function backgroundDark(event){
   event.preventDefault()
   $('body').css('background-color','#0a0f47')
   $('.steps').css('color','white')
-  $('#heroTaskContainer').css('background-color', '#1b998b') 
+  $('#heroTaskContainer').css('background-color', '#1b998b')
   $('#firstStepMorningNight').css('display','none')
   $('#secondStepWhichHero').css('display','block')
   $('#back').css('display','block')
@@ -144,15 +144,16 @@ function fourthRenderBigTasks(event) {
   $('#fourthStepDoTasks').css('display','block')
   const tasksURL = {teeth: 'images/heroTask/teethbatman.jpg',
                  breakfast: 'images/heroTask/breakfastmama.jpg',
-                 clothes: 'images/heroTask/clothes.jpg',
+                 clothes: 'images/heroTask/tshirt.jpg',
                  book: 'images/heroTask/book2.jpg',
                  shower: 'images/heroTask/shower.jpg',
                  hair: 'images/heroTask/hair.jpg',
-                 pajama: 'images/heroTask/pajama.jpg',
+                 pajama: 'images/heroTask/pajamas.jpg',
                  exercises: 'images/heroTask/exercises.jpg',
                  backpack: 'images/heroTask/backpack.jpg',
-                 laundry: 'images/heroTask/laundry.jpg',
-                 toys: 'images/heroTask/toys.jpg'
+                 laundry: 'images/heroTask/laundry.png',
+                 toys: 'images/heroTask/toys.jpg',
+                 hands: 'images/heroTask/hands.jpg'
                 }
   const choosenTasksArray = $('#heroTaskContainer').children('.btn-large')
   $('.bigTaskImages').empty()
