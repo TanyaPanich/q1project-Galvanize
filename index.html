@@ -20,7 +20,7 @@
     <nav>
       <div class="nav-wrapper">
         <ul id="nav-mobile" class="left">
-          <li id="back"><img src="images/navIcons/back.svg" width="50px"></li>
+          <li id="back"><img src="images/navIcons/arrows.svg" width="50px"></li>
         </ul>
         <a href="#" class="brand-logo center">Little Hero's Helper</a>
       </div>
@@ -83,13 +83,13 @@
   <div id="thirdStepChooseTasks">
     <h1 class="flow-text center-align steps">Step3: Choose your tasks!</h1>
     <div class="row container z-depth-4" id="firstRow">
-      <div class="col s4" id="favHeroImage">
+      <div class="col s3" id="favHeroImage">
       </div>
-      <div class="col s8" id="heroTaskContainer">
-        <div id="dragText" contentEditable=true data-text="Drag some tasks here">
-        </div>
+      <div class="col s6" id="heroTaskContainer">
       </div>
-      <a id="start" class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/navIcons/play-button.svg" width='50px' class="right">Start!!!</a>
+      <div class="col s3" id="startButton">
+        <a id="start" class="waves-effect waves-light btn-large hoverable z-depth-4"><img src="images/navIcons/start.svg" width='50px' class="right">Start!!!</a>
+      </div>
     </div>
     <!--end of first row-->
     <div class="row container" id="taskContainer">
@@ -110,20 +110,31 @@
   <!--end of thirdStep container-->
   <div id="fourthStepDoTasks">
     <h1 class="flow-text center-align steps">Step4: Let's do it!</h1>
-    <!-- <img src="images/heroTask/teethbatman.jpg"> -->
 
+    <div class="container">
+
+      <div class="bigTaskImages">
+      </div>
+
+    </div>
   </div>
   <!--end of fourthStep container-->
   <div id="fifthStepGetReward">
-    <div class='container'>
-      <h1 class="flow-text center-align steps">Step5: Great job! You earned a reward!</h1>
-      <iframe width="560" height="315"
-        src="https://www.youtube.com/embed/qMnQ5IT12Og?rel=0"
-        frameborder="0" allow="autoplay; encrypted-media"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h1 class="flow-text center-align steps">Step5: Great job! You earned a reward!</h1>
+          <p class="center-align">
+            <iframe width="560" height="315"
+              src="https://www.youtube.com/embed/qMnQ5IT12Og?rel=0"
+              frameborder="0" allow="encrypted-media"
+              allowfullscreen>
+            </iframe>
+          </p>
 
+        </div>
+      </div>
+    </div>
   </div>
   <!--end of fifthStep container-->
 

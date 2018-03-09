@@ -26,7 +26,9 @@ function goBack() {
 
 function backgroundDark(event){
   event.preventDefault()
-  $('body').css('background-color','#01579b')
+  $('body').css('background-color','#0a0f47')
+  $('.steps').css('color','white')
+  $('#heroTaskContainer').css('background-color', '#1b998b') 
   $('#firstStepMorningNight').css('display','none')
   $('#secondStepWhichHero').css('display','block')
   $('#back').css('display','block')
@@ -34,7 +36,9 @@ function backgroundDark(event){
 
 function backgroundLight(event){
   event.preventDefault()
-  $('body').css('background-color','#ffd54f')
+  $('body').css('background-color','#fffd82')
+  $('.steps').css('color','#0a0f47')
+  $('#heroTaskContainer').css('background-color', '#ff9b71')
   $('#firstStepMorningNight').css('display','none')
   $('#secondStepWhichHero').css('display','block')
   $('#back').css('display','block')
@@ -47,13 +51,19 @@ function renderHeroesCards(heroesArr) {
     $card.on('click', thirdRenderFavoriteHero)
     const $cardImage = $('<div>').addClass('card-image')
     const $img = heroImageString(hero)
-    const $span = $('<span>').addClass('card-title')
-    $span.text(hero.name)
+    const $span = heroSpanText(hero)
+    //const $span = $('<span>').addClass('card-title')
+    //$span.text(hero.name)
     $cardImage.append($img, $span)
     $card.append($cardImage)
     $cols10m3.append($card)
     $('#listings').append($cols10m3)
   }
+}
+function heroSpanText(hero) {
+  const span = $('<span>').addClass('card-title')
+  span.text(hero.name)
+  return span
 }
 
 function heroCardAttributes(hero){
@@ -133,10 +143,9 @@ function fourthRenderBigTasks(event) {
   $('#thirdStepChooseTasks').css('display','none')
   $('#fourthStepDoTasks').css('display','block')
   const tasksURL = {teeth: 'images/heroTask/teethbatman.jpg',
-                 book: 'images/heroTask/book.jpg',
-                 breakfast: 'images/heroTask/breakfast.jpg',
+                 breakfast: 'images/heroTask/breakfastmama.jpg',
                  clothes: 'images/heroTask/clothes.jpg',
-                 book: 'images/heroTask/book.jpg',
+                 book: 'images/heroTask/book2.jpg',
                  shower: 'images/heroTask/shower.jpg',
                  hair: 'images/heroTask/hair.jpg',
                  pajama: 'images/heroTask/pajama.jpg',
@@ -146,13 +155,14 @@ function fourthRenderBigTasks(event) {
                  toys: 'images/heroTask/toys.jpg'
                 }
   const choosenTasksArray = $('#heroTaskContainer').children('.btn-large')
-  $('#fourthStepDoTasks').empty()
+  $('.bigTaskImages').empty()
   let count = 0
   for(let choosenTask of choosenTasksArray) {
     const $bigTaskImage = $('<img>')
     if (choosenTask.name in tasksURL) {
       $bigTaskImage.attr('src', tasksURL[choosenTask.name])
-      $('#fourthStepDoTasks').append($bigTaskImage)
+      $bigTaskImage.attr('width', '300px')
+      $('.bigTaskImages').append($bigTaskImage)
       $bigTaskImage.on('click', function() {
         $(this).effect( "explode", {}, 500 );
         count++;

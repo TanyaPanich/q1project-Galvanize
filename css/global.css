@@ -1,15 +1,34 @@
 html {
     font-family: Lora, Trebuchet, sans-serif;
-  }
+}
+
+a.brand-logo {
+  color: #0a0f47;
+}
+
+.btn-large {
+  background-color: #ed217c;
+  width: 200px;
+  margin: 10px;
+  padding: 5px;
+}
+
+#start {
+  background-color: #1b998b;
+}
+
 #firstRow {
-  border: 1px black solid;
   display: flex;
 }
+
 #favHeroImage {
-
+  margin: auto;
+  margin-left: 10px;
 }
-#heroTaskContainer {
 
+#startButton{
+  margin: auto;
+  margin-right: 10px;
 }
 
 #secondStepWhichHero,
@@ -18,9 +37,20 @@ html {
 #fifthStepGetReward {
   display: none;
 }
+
 #back {
   display:none;
 }
-[contentEditable=true]:empty:not(:focus):before{
-    content:attr(data-text)
+
+.nav-wrapper{
+  background-color: #ff9b71;
+}
+
+.containerTasks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bigTaskImages {
+  flex-basis: 30%;
 }
